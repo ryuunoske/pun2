@@ -1,0 +1,103 @@
+%body.skin-blue.layout-top-nav
+	.wrapper
+		%header.main-header
+			%nav.navbar.navbar-static-top
+				.container-fluid
+					.navbar-header
+						%a.navbar-brand{:href => "../../index2.html"}
+							%b> Admin
+							LTE
+						%button.navbar-toggle.collapsed{"data-target" => "#navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+							%i.fa.fa-bars
+					/ Collect the nav links, forms, and other content for toggling
+					#navbar-collapse.collapse.navbar-collapse
+						%ul.nav.navbar-nav
+							%li.active
+								%a{:href => "#"}
+									Link
+									%span.sr-only (current)
+							%li
+								%a{:href => "#"} Link
+							%li.dropdown
+								%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+									Dropdown
+									%span.caret
+								%ul.dropdown-menu{:role => "menu"}
+									%li
+										%a{:href => "#"} Action
+									%li
+										%a{:href => "#"} Another action
+									%li
+										%a{:href => "#"} Something else here
+									%li.divider
+									%li
+										%a{:href => "#"} Separated link
+									%li.divider
+									%li
+										%a{:href => "#"} One more separated link
+						%form.navbar-form.navbar-left{:role => "search"}
+							.form-group
+								%input#navbar-search-input.form-control{:placeholder => "Search", :type => "text"}
+						%ul.nav.navbar-nav.navbar-right
+							%li
+								%a{:href => "#"} Link
+							%li.dropdown
+								%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+									Dropdown
+									%span.caret
+								%ul.dropdown-menu{:role => "menu"}
+									%li
+										%a{:href => "#"} Action
+									%li
+										%a{:href => "#"} Another action
+									%li
+										%a{:href => "#"} Something else here
+									%li.divider
+									%li
+										%a{:href => "#"} Separated link
+					/ /.navbar-collapse
+				/ /.container-fluid
+		/ Full Width Column
+		.content-wrapper
+			.container-fluid
+				/ Content Header (Page header)
+				%section.content-header
+					%h1
+						Top Navigation
+						%small Example 2.0
+					%ol.breadcrumb
+						%li
+							%a{:href => "#"}
+								%i.fa.fa-dashboard
+								Home
+						%li.active Dashboard
+				/ Main content
+				%section.content
+					.callout.callout-info
+						%h4 Tip!
+						%p Add the layout-top-nav class to the body tag to get this layout. This feature can also be used with a sidebar! So use this class if you want to remove the custom dropdown menus from the navbar and use regular links instead.
+					.callout.callout-danger
+						%h4 Warning!
+						%p The construction of this layout differs from the normal one. In other words, the HTML markup of the navbar and the content will slightly differ than that of the normal layout.
+					.box.box-default
+						.box-header.with-border
+							%h3.box-title Blank Box
+						.box-body
+							The great content goes here
+						/ /.box-body
+					/ /.box
+				/ /.content
+			/ /.container
+		/ /.content-wrapper
+		%footer.main-footer
+			.container-fluid
+				.pull-right.hidden-xs
+					%b Version
+					2.0
+				%strong
+					Copyright &copy; 2014-2015
+					= succeed "." do
+						%a{:href => "http://almsaeedstudio.com"} Almsaeed Studio
+				All rights reserved.
+			/ /.container
+	/ ./wrapper

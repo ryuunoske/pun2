@@ -1,0 +1,80 @@
+.col-lg-3.col-md-3.col-sm-12.col-xs-12
+	.box.box-info
+		.box-header.with-border
+			%h4.box-title
+				Common Profile
+			.box-tools.pull-right
+				%a.label.label-primary{:href => '#'} Edit
+		.box-body
+			.row
+				.col-lg-4.col-md-4.col-sm-4.col-xs-4
+					Username
+				.col-lg-6.col-md-6.col-sm-6.col-xs-8.t-wrap
+					- if user_signed_in?
+						= current_user.username
+					- else
+						Eg. username
+			.row
+				.col-lg-4.col-md-4.col-sm-4.col-xs-4
+					Email ID
+				.col-lg-6.col-md-6.col-sm-6.col-xs-8.t-wrap
+					- if user_signed_in?
+						= current_user.email
+					- else
+						Eg. Emailid
+	.box.box-info
+		.box-header.text-center.with-border
+			%h4.box-title Messages
+		.box-body
+			.row
+				.col-xs-12.col-sm-12.col-md-12.col-lg-12
+					%button.btn.btn-info.btn-block Inbox
+			%br/
+			.row
+				.col-xs-12.col-sm-12.col-md-12.col-lg-12
+					%button.btn.btn-info.btn-block Drafts
+			%br/
+			.row
+				.col-xs-12.col-sm-12.col-md-12.col-lg-12
+					%button.btn.btn-info.btn-block Outbox
+			%br/
+			.row
+				.col-xs-12.col-sm-12.col-md-12.col-lg-12
+					%button.btn.btn-info.btn-block Sent
+	.box.box-info
+		.box-header.text-center.with-border
+			%h4.box-title Notifications
+		.box-body
+			.row
+				.col-xs-12.col-sm-12.col-md-12.col-lg-12
+					%a.btn.btn-block.btn-social.t-wrap{:href => "#"}
+						%i.fa.fa-users.text-aqua
+						5 new members joined today
+			.row
+				.col-xs-12.col-sm-12.col-md-12.col-lg-12
+					%a.btn.btn-block.btn-social.t-wrap{:href => "#"}
+						%i.fa.fa-truck.text-green
+						3 Transactions Completed today
+			.row
+				.col-xs-12.col-sm-12.col-md-12.col-lg-12
+					%a.btn.btn-block.btn-social.t-wrap{:href => "#"}
+						%i.fa.fa-truck.text-green
+						5 Transactions Completed yesterday
+	.box.box-info
+		.box-header.text-center.with-border
+			%h4.box-title Tasks
+		.box-body
+			.row-fluid.with-border
+				%a{:href => "#"}
+					Delivery To Karl Bagh
+					%small.pull-right 20%
+					.progress.xs
+						.progress-bar.progress-bar-aqua{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "20", :role => "progressbar", :style => "width: 20%"}
+							%span.sr-only 20% Complete
+			.row-fluid.with-border
+				%a{:href => "#"}
+					Delivery To Partap Nagar
+					%small.pull-right 10%
+					.progress.xs
+						.progress-bar.progress-bar-aqua{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "20", :role => "progressbar", :style => "width: 10%"}
+							%span.sr-only 10% Complete

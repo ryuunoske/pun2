@@ -1,0 +1,20 @@
+%section.content-wrapper
+	.container-fluid
+		%section.content-header
+			%h1
+				Administrator
+				%small Dashboard
+			%ol.breadcrumb
+				%li
+					= link_to root_path do
+						%i.fa.fa-dashboard
+							Home
+				%li.active
+					Dashboard
+		%section.content
+			.row
+				= render "admins/dashboard/top"
+			.row
+				=  render "admins/dashboard/mid"
+			.row
+				= render "admins/dashboard/bottom"

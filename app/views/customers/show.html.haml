@@ -1,0 +1,12 @@
+%section.content
+	%p#notice= notice
+	%h3
+		Hello, #{@customer.username}!
+	/
+		<haml_silent></haml_silent> |
+		<haml_silent>
+		</haml_silent>
+	- @shipments.each do |shipment|
+		= shipment.title
+	- if user_signed_in?
+		= link_to 'Sign-Out',main_app.destroy_user_session_path

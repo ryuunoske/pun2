@@ -1,0 +1,42 @@
+.nav-tabs-custom
+	%ul.nav.nav-tabs.nav-justified#searchTab.inline-block{:role => "tablist"}
+		%li.active
+			%a{'data-toggle' => "tab", :href => "#loc1", :role => "tab", "aria-controls" => "loc1"} Carrier Name or Location
+		%li
+			%a{'data-toggle'=> "tab", :href => "#loc2", :role => "tab", "aria-controls" => "loc2"} From / To
+	.tab-content
+		.tab-pane.active#loc1{:role => "tabpanel"}
+			.input-group.margin.input-group-lg
+				%input.form-control.border-left-radius{:type => 'text'}
+				%span.input-group-btn
+					.btn.btn-info
+						Search
+		.tab-pane#loc2{:role => "tabpanel"}
+			-# Visible on large and medium Screen
+			.row-fluid
+				.visible-lg-block.visible-md-block
+					.input-group.input-group-lg.margin
+						%span.input-group-addon
+							From:
+						%input.form-control{:type => 'text', :placeholder => "eg. Delhi, Mumbai"}
+						%span.input-group-addon
+							To:
+						%input.form-control{:type => 'text', :placeholder => "eg. Chennai, Banglore"}
+						.input-group-btn
+							%button.btn.btn-info
+								Search
+			.row-fluid
+				-# Visible on Small and Medium Screen
+				.visible-xs-block.visible-sm-block
+					.input-group.input-group-lg.margin
+						%span.input-group-addon From:
+						%input.form-control{:type => 'text'}
+			.row-fluid
+				.visible-xs-block.visible-sm-block
+					.input-group.input-group-lg.margin
+						%span.input-group-addon To:
+						%input.form-control{:type => 'text'}
+			.row-fluid
+				.visible-xs-block.visible-sm-block
+					%button.btn.btn-info.btn-lg
+						Search

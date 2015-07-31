@@ -1,0 +1,106 @@
+%body
+  %header.header
+    %a.logo{:href => "#"}
+      / Add the class icon to your logo image or logo icon to add the margining
+      Kargo Cat
+    / Header Navbar: style can be found in header.less
+    %nav.navbar.navbar-static-top{:role => "navigation"}
+      / Sidebar toggle button
+      %a.navbar-btn.sidebar-toggle{"data-toggle" => "offcanvas", :href => "#", :role => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      .navbar-right
+        %ul.nav.navbar-nav
+          %li.dropdown.messages-menu
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+              %i.fa.fa-envelope
+              %span.label.label-success 4
+            %ul.dropdown-menu
+              %li.header You have 4 messages
+              %li
+                / inner menu: contains the actual data
+                %ul.menu
+                  %li
+                    / start message
+                    %a{:href => "#"}
+                      .pull-left
+                        %img.img-circle{:alt => "User Image", :src => "/img/avatar3.png"}/
+                      %h4
+                        Support Team
+                        %small
+                          %i.fa.fa-clock-o
+                          5 mins
+                      %p Why not buy a new awesome theme?
+                  / end message
+                  %li
+                    %a{:href => "#"}
+                      .pull-left
+                        %img.img-circle{:alt => "user image", :src => "/img/avatar2.png"}/
+                      %h4
+                        AdminLTE Design Team
+                        %small
+                          %i.fa.fa-clock-o
+                          2 hours
+                      %p Why not buy a new awesome theme?
+                  %li
+                    %a{:href => "#"}
+                      .pull-left
+                        %img.img-circle{:alt => "user image", :src => "/img/avatar.png"}/
+                      %h4
+                        Developers
+                        %small
+                          %i.fa.fa-clock-o
+                          Today
+                      %p Why not buy a new awesome theme?
+                  %li
+                    %a{:href => "#"}
+                      .pull-left
+                        %img.img-circle{:alt => "user image", :src => "/img/avatar2.png"}/
+                      %h4
+                        Sales Department
+                        %small
+                          %i.fa.fa-clock-o
+                          Yesterday
+                      %p Why not buy a new awesome theme?
+                  %li
+                    %a{:href => "#"}
+                      .pull-left
+                        %img.img-circle{:alt => "user image", :src => "/img/avatar.png"}/
+                      %h4
+                        Reviewers
+                        %small
+                          %i.fa.fa-clock-o
+                          2 days
+                      %p Why not buy a new awesome theme?
+              %li.footer
+                %a{:href => "#"} See All Messages
+          / User Account: style can be found in dropdown.less
+          %li.dropdown.user.user-menu
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+              %i.glyphicon.glyphicon-user
+              %span
+                Jane Doe
+                %i.caret
+            %ul.dropdown-menu
+              / User image
+              %li.user-header.bg-light-blue
+                %img.img-circle{:alt => "User Image", :src => "/img/avatar3.png"}/
+                %p
+                  Jane Doe - Web Developer
+                  %small Member since Nov. 2012
+              / Menu Body
+              %li.user-body
+                .col-xs-4.text-center
+                  %a{:href => "#"} Followers
+                .col-xs-4.text-center
+                  %a{:href => "#"} Sales
+                .col-xs-4.text-center
+                  %a{:href => "#"} Friends
+              / Menu Footer
+              %li.user-footer
+                .pull-left
+                  %a.btn.btn-default.btn-flat{:href => "#"} Profile
+                .pull-right
+                  %a.btn.btn-default.btn-flat{:href => "#"} Sign out

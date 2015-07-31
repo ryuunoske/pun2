@@ -1,0 +1,86 @@
+-#Live Chart
+.col-lg-6
+	%section.box.box-primary
+		.box-header.ui-sortable
+			.box-title
+				%i.fa.fa-bar-chart-o
+					Revenue/Drivers/Carriers/Users
+		.box-body.no-padding
+			#chart{:style => "position: relative; height: 300px;width: 100%;"}
+-#Generates empty chart
+:javascript
+	eon.chart({
+			history: false,
+			channel: "c3-spline",
+			flow: {
+				duration: 100
+			},
+			generate: {
+				bindto: '#chart',
+				data: {
+					x: 'x',
+					labels: true
+				},
+				axis : {
+					x : {
+						type : 'timeseries',
+						tick: {
+							format: '%H:%M:%S'
+						}
+					}
+				}
+			}
+		});
+-#Chart Values
+:javascript
+	var pubnub = PUBNUB.init({
+		publish_key: 'demo',
+		subscribe_key: 'demo'
+	});
+	setInterval(function(){
+
+		pubnub.publish({
+			channel: 'c3-spline',
+			message: {
+				columns: [
+					['x', new Date().getTime()],
+					['Revenue', Math.floor(Math.random() * 99)],
+					['Drivers', Math.floor(Math.random() * 99)],
+					['Carriers', Math.floor(Math.random() * 99)],
+					['Users', Math.floor(Math.random() * 99)]
+
+				]
+			}
+		});
+
+	}, 1000);
+-#Live Chart End
+.col-lg-6
+	%section.box.box-solid.bg-light-blue-gradient
+		.box-header
+			/ tools box
+			.pull-right.box-tools
+				%button.btn.btn-primary.btn-sm.daterange.pull-right{"data-toggle" => "tooltip", :title => "Date range"}
+					%i.fa.fa-calendar
+				%button.btn.btn-primary.btn-sm.pull-right{"data-toggle" => "tooltip", "data-widget" => "collapse", :style => "margin-right: 5px;", :title => "Collapse"}
+					%i.fa.fa-minus
+			/ /. tools
+			%i.fa.fa-map-marker
+			%h3.box-title
+				Visitors
+		.box-body
+			#world-map.jvectormap.jvectormap-mill{:style => "height: 250px; width: 100%; backgroundColor: '#FFFFFF';", 'data-projection' => 'mill', 'data-name' => 'world_mill_en'}
+		/ /.box-body
+		.box-footer.no-border
+			.row
+				.col-xs-4.text-center{:style => "border-right: 1px solid #f4f4f4"}
+					#sparkline-1
+					.knob-label Visitors
+				.col-xs-4.text-center{:style => "border-right: 1px solid #f4f4f4"}
+					#sparkline-2
+					.knob-label Online
+				.col-xs-4.text-center
+					#sparkline-3
+					.knob-label Exists
+:javascript
+	$('#world-map').vectorMap({map: 'world_mill_en', backgroundColor: '#3C8DBC', color: '#FFFS'});

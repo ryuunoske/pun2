@@ -1,0 +1,30 @@
+%section.sidebar
+  / Sidebar user panel
+  .user-panel
+    .pull-left.image
+      %img.img-circle{:alt => "User Image", :src => "/img/avatar3.png"}/
+    .pull-left.info
+      %p Hello, User
+      %a{:href => "#"}
+        %i.fa.fa-circle.text-success
+        Online
+  / search form
+  %form.sidebar-form{:action => "#", :method => "get"}
+    .input-group
+      %input.form-control{:name => "q", :placeholder => "Search...", :type => "text"}/
+      %span.input-group-btn
+        %button#search-btn.btn.btn-flat{:name => "search", :type => "submit"}
+          %i.fa.fa-search
+  / /.search form
+  / sidebar menu: : style can be found in sidebar.less
+  %ul.sidebar-menu
+    = nav_link root_path do
+      %i.fa.fa-dashboard
+      %span Dashboard
+    = treeview_link 'Lots of links here' do
+      = nav_link "#" do
+        %i.fa.fa-angle-double-right
+        One Way
+      = nav_link "#" do
+        %i.fa.fa-angle-double-right
+        Another

@@ -1,0 +1,23 @@
+%section.content-wrapper
+	.container-fluid
+		%section.content-header
+			%h1
+				Control Panel
+				%small User Account Info
+			%ol.breadcrumb
+				%li
+					= link_to root_path do
+						%i.fa.fa-dashboard
+							Home
+				%li.active
+					User Account
+		%section.content
+			.row-fluid
+				.box.box-solid.box-primary
+					.box-header.text-center
+						%h2.box-title
+							Profile
+					.box-body
+						.row
+							= render "devise/sessions/user_info/left"
+							= render "devise/sessions/user_info/right"

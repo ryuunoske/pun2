@@ -1,0 +1,19 @@
+%p#notice= notice
+%p
+  %strong Title:
+  = @shipment.title
+%p
+  %strong Length:
+  = @shipment.length
+%p
+  %strong Height:
+  = @shipment.height
+%p
+  %strong Description:
+  = @shipment.description
+%p
+  %strong Customer:
+  = @shipment.customer_id
+= link_to 'Edit', edit_shipment_path(@shipment)
+|
+= link_to 'Back', shipments_path

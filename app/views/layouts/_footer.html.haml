@@ -1,0 +1,17 @@
+%footer.footer
+	.inline
+		= link_to "About",   '#'
+		|
+		= link_to "Contact", '#'
+		|
+		= link_to 'News', '#'
+	.main-footer
+		.container-fluid
+			.pull-right.hidden-xs
+				%b Version
+				1.0
+			%strong
+				Copyright &copy; 2014-2015
+				= succeed "." do
+					%a{:href => "#"} Amigos & Techies
+			All rights reserved.

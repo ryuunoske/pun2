@@ -1,0 +1,34 @@
+.wrapper
+	%header.main-header
+		%nav.navbar.navbar-static-top{:role => "navigation"}
+			-# Makes The page Navbar Spread Throughout
+			.container-fluid
+				.navbar-header
+					= link_to root_path ,  class: 'navbar-brand' do
+						%b> C
+						arg
+						%b> C
+						o
+					%button.navbar-toggle.collasped{"data-target" => "#navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+						%i.fa.fa-bars
+				.collapse.navbar-collapse#navbar-collapse
+					= render 'users/nav'
+					- if user_signed_in?
+						= render 'devise/sessions/user_info'
+					- else
+						= render 'devise/sessions/sign_in'				
+			-# Container Fluid Finish
+		-# Navbar Finish
+	-#Header Finish
+	-# = render 'devise/sessions/detailed_user_info'
+	-# if current_user.type == 'Admin'
+	=# render 'admins/dashboard'
+	= render 'devise/sessions/detailed_user_info'
+	-# elsif current_user.type == 'Carrier'
+		=# render 'carriers/dashboard'
+	-# else
+		=# render 'users/content'
+	-#Content finish
+	= render 'layouts/footer'
+	-# footer finish
+-#wrapper finish

@@ -1,0 +1,8 @@
+%section.content
+  %p#notice= notice
+  - @carriers.each do |carrier|
+    = carrier.username
+    %br/
+  - @shipments.each do |shipment|
+    = shipment.title
+    %br/

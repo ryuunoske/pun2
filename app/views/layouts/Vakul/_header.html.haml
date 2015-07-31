@@ -1,0 +1,15 @@
+%body.skin-blue
+	- if user_signed_in?
+		%header.main-header
+			= link_to 'Kargo Cat', root_path, :class => 'logo'
+			= render 'users/nav'
+		.wrapper.row-offcanvas.row-offcanvas-left
+			%aside.left-side.sidebar-offcanvas
+				= render "layouts/application_sidebar"
+			%aside.right-side
+				= yield(:content_header)
+				- flash.each do |name, msg|
+					.pad.margin.no-print
+						= content_tag :div, :class => "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", :role => "alert" do
+							%button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} x
+							= msg
